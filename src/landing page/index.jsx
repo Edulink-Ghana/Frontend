@@ -5,7 +5,7 @@ import FilterSession from './components/filterSession'
 import Career from './components/career'
 import Blog from './components/blog'
 
-const LandingPage = () => {
+const Home = () => {
   return (
     <div>
         <Hero />
@@ -18,4 +18,4 @@ const LandingPage = () => {
   )
 }
 
-export default LandingPage
+export default Home

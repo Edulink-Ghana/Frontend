@@ -1,61 +1,85 @@
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="navbar bg-base-100">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16" />
-            </svg>
+    <header className={`flex w-full items-center bg-white dark:bg-dark`}>
+      <div className="container">
+        <div className="relative -mx-4 flex items-center justify-between">
+          <div className="w-60 max-w-full px-4">
+            <a href="/" className="block w-full py-5 text-3xl font-bold">
+              <div className="flex flex-row pl-[40px]">
+                <h1 className="dark:hidden text-[#5D1AFF]">MyStudy</h1>
+                <h1 className="dark:hidden text-blue-600">Aid</h1>
+              </div>
+              <div>
+                <h1 className="hidden dark:block">MyStudy</h1>
+                <h1 className="hidden dark:block">Aid</h1>
+              </div>
+            </a>
           </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-            <li><a>Item 1</a></li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-              </ul>
-            </li>
-            <li><a>Item 3</a></li>
-          </ul>
+          <div className="flex w-full items-center justify-between px-4">
+            <div>
+              <button
+                onClick={() => setOpen(!open)}
+                id="navbarToggler"
+                className={` ${open && "navbarTogglerActive"
+                  } absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden`}
+              >
+                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
+                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
+                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
+              </button>
+              <nav
+                // :className="!navbarOpen && 'hidden' "
+                id="navbarCollapse"
+                className={`absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white px-6 py-5 shadow dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none lg:dark:bg-transparent ${!open && "hidden"
+                  } `}
+              >
+                <ul className="block lg:flex">
+                  <ListItem NavLink="/#">Home</ListItem>
+                  <ListItem NavLink="/#">Payment</ListItem>
+                  <ListItem NavLink="/#">About</ListItem>
+                  <ListItem NavLink="/#">Blog</ListItem>
+                </ul>
+              </nav>
+            </div>
+            <div className="hidden justify-end pr-16 sm:flex lg:pr-0">
+              <a
+                href="/#"
+                className="px-7 py-3 text-base font-medium text-dark hover:text-primary dark:text-white"
+              >
+                Sign in
+              </a>
+
+              <a
+                href="/#"
+                className="rounded-md bg-primary px-7 mr-[30px] py-3 text-base font-medium text-white hover:bg-primary/90"
+              >
+                Sign Up
+              </a>
+            </div>
+          </div>
         </div>
-        <span className="btn btn-ghost text-xl">MyStudy</span>
-        <span className="btn btn-ghost text-xl">Aid</span>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li><a>Home</a></li>
-          <li>
-            <details>
-              <summary>About</summary>
-              <ul className="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-              </ul>
-            </details>
-          </li>
-          <li><a>Find A Tutor</a></li>
-        </ul>
-      </div>
-      <div className="navbar-end">
-        <a className="btn">SignUp</a>
-      </div>
-    </div>
-  )
-}
+    </header>
+  );
+};
 
 export default Navbar;
 
+const ListItem = ({ children, NavLink }) => {
+  return (
+    <>
+      <li>
+        <a
+          href={NavLink}
+          className="flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-white lg:ml-12 lg:inline-flex"
+        >
+          {children}
+        </a>
+      </li>
+    </>
+  );
+};

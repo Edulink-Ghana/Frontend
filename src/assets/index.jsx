@@ -1,5 +1,5 @@
-import hero from "./images/study.jpg"
+import heroBg from "./images/study.jpg"
 
-export {
-    hero
+export{
+    heroBg
 };

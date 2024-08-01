@@ -21,27 +21,32 @@ const Navbar = () => {
           </div>
           <div className="flex w-full items-center justify-between px-4">
             <div>
-              <button
+              {/* <button
                 onClick={() => setOpen(!open)}
                 id="navbarToggler"
                 className={` ${open && "navbarTogglerActive"
-                  } absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden`}
+                  } absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden `} */}
+              <button
+                onClick={() => setOpen(!open)}
+                id="navbarToggler"
+                className={`absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-0 lg:hidden ${open ? "navbarTogglerActive" : ""}`}
               >
-                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
+                <span className="relative my-[2px] block h-[2px] w-[30px] pr-[6px] bg-body-color dark:bg-white">Menu</span>
                 <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
                 <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
               </button>
               <nav
                 // :className="!navbarOpen && 'hidden' "
                 id="navbarCollapse"
-                className={`absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white px-6 py-5 shadow dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none lg:dark:bg-transparent ${!open && "hidden"
+                className={`absolute right-6 top-full w-full max-w-[250px] rounded-lg bg-white px-6 py-5 shadow dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none lg:dark:bg-transparent ${!open && "hidden"
                   } `}
               >
                 <ul className="block lg:flex">
                   <ListItem NavLink="/#">Home</ListItem>
-                  <ListItem NavLink="/#">Payment</ListItem>
-                  <ListItem NavLink="/#">About</ListItem>
-                  <ListItem NavLink="/#">Blog</ListItem>
+                  <ListItem NavLink="/#">Find A Tutor</ListItem>
+                  {/* <ListItem NavLink="/#">SignUp As Tutor</ListItem>
+                  <ListItem NavLink="/#">SignUp As User</ListItem>
+                  <ListItem NavLink="/#">Login</ListItem> */}
                 </ul>
               </nav>
             </div>
@@ -57,7 +62,13 @@ const Navbar = () => {
                 href="/#"
                 className="rounded-md bg-primary px-7 mr-[30px] py-3 text-base font-medium text-white hover:bg-primary/90"
               >
-                Sign Up
+                Sign Up As User
+              </a>
+              <a
+                href="/#"
+                className="rounded-md bg-primary px-7 mr-[30px] py-3 text-base font-medium text-white hover:bg-primary/90"
+              >
+                Sign Up As Tutor
               </a>
             </div>
           </div>

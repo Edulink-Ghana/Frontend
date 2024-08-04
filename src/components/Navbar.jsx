@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SignUp3 from "../Pages/userSignUp";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -59,7 +60,7 @@ const Navbar = () => {
               </a>
 
               <a
-                href="/#"
+                href="/Signup"
                 className="rounded-md bg-primary px-7 mr-[30px] py-3 text-base font-medium text-white hover:bg-primary/90"
               >
                 Sign Up As User

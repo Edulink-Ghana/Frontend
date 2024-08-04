@@ -3,7 +3,7 @@ import { aboutImg } from "../../assets";
 
 const AboutUs16 = () => {
   return (
-    <section className="ezy__about16 light pt-14 pb-6 md:pt-60 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white z-[1]">
+    <section className="ezy__about16 light ml-[30px] mt-[-100px] pt-14 pb-6 md:pt-60 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white z-[1]">
       <div className="container px-4">
         <div className="bg-white shadow-2xl dark:bg-[#1E2735] dark:shadow-none min-h-[500px] rounded-xl p-6 lg:p-12 z-[1] relative">
           <div className="grid grid-cols-12 h-full">

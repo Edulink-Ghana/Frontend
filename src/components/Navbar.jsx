@@ -53,7 +53,7 @@ const Navbar = () => {
             </div>
             <div className="hidden justify-end pr-16 sm:flex lg:pr-0">
               <a
-                href="/#"
+                href="/login"
                 className="px-7 py-3 text-base font-medium text-dark hover:text-primary dark:text-white"
               >
                 Sign in

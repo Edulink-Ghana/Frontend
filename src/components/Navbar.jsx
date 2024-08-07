@@ -66,7 +66,7 @@ const Navbar = () => {
                 Sign Up As User
               </a>
               <a
-                href="/#"
+                href="/tutorsignup"
                 className="rounded-md bg-primary px-7 mr-[30px] py-3 text-base font-medium text-white hover:bg-primary/90"
               >
                 Sign Up As Tutor

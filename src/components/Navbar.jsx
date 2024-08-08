@@ -11,8 +11,8 @@ const Navbar = () => {
           <div className="w-60 max-w-full px-4">
             <a href="/" className="block w-full py-5 text-3xl font-bold">
               <div className="flex flex-row pl-[40px]">
-                <h1 className="dark:hidden text-[#5D1AFF]">MyStudy</h1>
-                <h1 className="dark:hidden text-blue-600">Aid</h1>
+              <h1 className="dark:hidden text-[#5D1AFF] text-[35px] font-bold">MyStudy</h1>
+              <h1 className="dark:hidden text-[#BF62CD] text-[30px]">Aid</h1>
               </div>
               <div>
                 <h1 className="hidden dark:block">MyStudy</h1>

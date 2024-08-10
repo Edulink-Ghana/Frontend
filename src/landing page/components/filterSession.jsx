@@ -38,7 +38,7 @@ const TeamMemberItem = ({ member }) => (
     <img
       src={member.picture}
       alt={member.fullName}
-      className="max-w-full h-auto rounded-full border-4 p-1 border-blue-600 mx-auto -mt-20"
+      className="max-w-full h-auto rounded-full border-4 p-1 border-[#BF62CD] mx-auto -mt-20"
       width="120"
     />
     <div className="mt-6">
@@ -46,7 +46,7 @@ const TeamMemberItem = ({ member }) => (
       <p className="mb-4 text-sm">{member.designation}</p>
       <p className="opacity-50">{member.bio}</p>
       <div className="mt-6">
-        <button className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700">
+        <button className="bg-[#4A00FF] text-white py-2 px-4 rounded-full hover:bg-blue-700">
           Book Now
         </button>
       </div>
@@ -70,7 +70,7 @@ const TeamMember10 = () => {
   const handleRatingChange = (e) => setRating(e.target.value);
 
   return (
-    <section className="ezy__team10 light py-14 md:py-24 bg-[#BF62CD] dark:bg-[#0b1727] text-zinc-900 dark:text-white">
+    <section className="ezy__team10 light py-14 md:py-24 bg-[#BDD0F9] dark:bg-[#0b1727] text-zinc-900 dark:text-white">
       <div className="container px-4 mx-auto">
         <div className="flex justify-center mb-6 md:mb-12">
           <div className="max-w-lg text-center">
@@ -85,7 +85,7 @@ const TeamMember10 = () => {
         </div>
 
        
-        <div className="grid grid-cols-4 gap-2 mb-[10vh] ml-[10px] border p-[8px] bg-[#1D4ED8] rounded-lg ">
+        <div className="grid grid-cols-4 gap-2 mb-[10vh] ml-[10px] border p-[8px] bg-[#5D1AFF] rounded-lg ">
           <select
             className="form-select border rounded-lg "
             value={rating}

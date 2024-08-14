@@ -4,7 +4,15 @@ import { useParams } from "react-router-dom";
 
 const MemberDetail = ({ members }) => {
   const { memberId } = useParams();
-  const member = members.find((m) => m.fullName === memberId);
+  console.log(members);
+  console.log(memberId);
+
+
+  if (!members) {
+    return <div>Loading...</div>; // Or handle loading state accordingly
+  }
+
+  const member = members.find((m) => decodeURIComponent(m.fullName) === memberId);
 
   if (!member) {
     return <div>Member not found!</div>;

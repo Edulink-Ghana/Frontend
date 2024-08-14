@@ -1,36 +1,41 @@
+// TeamMember10.js
 import React from "react";
-
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import MemberDetail from "../../components/memberDetails";
 import PropTypes from "prop-types";
 
-const teamMembers = [
-	{
-		picture: "https://cdn.easyfrontend.com/pictures/users/user24.jpg",
-		fullName: "Akshay Kumar",
-		designation: "Founder / CEO",
-		bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
-		
-	},
-	{
-		picture: "https://cdn.easyfrontend.com/pictures/users/user9.jpg",
-		fullName: "Raima Ray",
-		designation: "Business Head",
-		bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
-		
-	},
-	{
-		picture: "https://cdn.easyfrontend.com/pictures/users/user23.jpg",
-		fullName: "Arjun Kapur",
-		designation: "UI Design",
-		bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
+const teamMembers = [{
+  id:"1",
+  picture: "https://cdn.easyfrontend.com/pictures/users/user24.jpg",
+  fullName: "Akshay Kumar",
+  designation: "Founder / CEO",
+  bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
 
-	},
-	{
-		picture: "https://cdn.easyfrontend.com/pictures/users/user13.jpg",
-		fullName: "Alia Bhatt",
-		designation: "SHS Tutor",
-		bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
-		
-	},
+},
+{
+  id:"2",
+  picture: "https://cdn.easyfrontend.com/pictures/users/user9.jpg",
+  fullName: "Raima Ray",
+  designation: "Business Head",
+  bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
+
+},
+{
+  id:"3",
+  picture: "https://cdn.easyfrontend.com/pictures/users/user23.jpg",
+  fullName: "Arjun Kapur",
+  designation: "UI Design",
+  bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
+
+},
+{
+  id:"4",
+  picture: "https://cdn.easyfrontend.com/pictures/users/user13.jpg",
+  fullName: "Alia Bhatt",
+  designation: "SHS Tutor",
+  bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
+
+},
 ];
 
 const TeamMemberItem = ({ member }) => (
@@ -46,18 +51,20 @@ const TeamMemberItem = ({ member }) => (
       <p className="mb-4 text-sm">{member.designation}</p>
       <p className="opacity-50">{member.bio}</p>
       <div className="mt-6">
-        <button className="bg-[#4A00FF] text-white py-2 px-4 rounded-full hover:bg-blue-700">
-          Book Now
-        </button>
+        <Link to={`/members/${member.fullName}`}>
+          <button className="bg-[#4A00FF] text-white py-2 px-4 rounded-full hover:bg-blue-700">
+            Book Now
+          </button>
+        </Link>
       </div>
     </div>
   </div>
 );
 
-
 TeamMemberItem.propTypes = {
-	member: PropTypes.object.isRequired,
+  member: PropTypes.object.isRequired,
 };
+
 const TeamMember10 = () => {
   const [category, setCategory] = React.useState('');
   const [location, setLocation] = React.useState('');
@@ -70,6 +77,7 @@ const TeamMember10 = () => {
   const handleRatingChange = (e) => setRating(e.target.value);
 
   return (
+
     <section className="ezy__team10 light py-14 md:py-24 bg-[#BDD0F9] dark:bg-[#0b1727] text-zinc-900 dark:text-white">
       <div className="container px-4 mx-auto">
         <div className="flex justify-center mb-6 md:mb-12">
@@ -84,7 +92,6 @@ const TeamMember10 = () => {
           </div>
         </div>
 
-       
         <div className="grid grid-cols-4 gap-2 mb-[10vh] ml-[10px] border p-[8px] bg-[#5D1AFF] rounded-lg ">
           <select
             className="form-select border rounded-lg "
@@ -92,9 +99,9 @@ const TeamMember10 = () => {
             onChange={handleRatingChange}
           >
             <option value="">Select Rating</option>
-            <option value="Math">Premium</option>
-            <option value="Science">Regular</option>
-            <option value="Arts">Newbies</option>
+            <option value="Premium">Premium</option>
+            <option value="Regular">Regular</option>
+            <option value="Newbies">Newbies</option>
           </select>
           <select
             className="form-select border rounded-lg"
@@ -113,9 +120,9 @@ const TeamMember10 = () => {
             onChange={handleLocationChange}
           >
             <option value="">Select Location</option>
-            <option value="New York">Accra</option>
-            <option value="Los Angeles">Kumasi</option>
-            <option value="Chicago">Ho</option>
+            <option value="Accra">Accra</option>
+            <option value="Kumasi">Kumasi</option>
+            <option value="Ho">Ho</option>
           </select>
 
           <select
@@ -128,7 +135,6 @@ const TeamMember10 = () => {
             <option value="In-Person">In-Person</option>
           </select>
         </div>
-
         <div className="grid grid-cols-4 gap-6 text-center pt-6">
           {teamMembers.map((member, i) => (
             <div className="col-span-4 md:col-span-2 lg:col-span-1" key={i}>
@@ -138,8 +144,9 @@ const TeamMember10 = () => {
         </div>
       </div>
     </section>
+      
+
   );
 };
-
 
 export default TeamMember10

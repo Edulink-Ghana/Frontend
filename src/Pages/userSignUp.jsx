@@ -54,7 +54,7 @@ const SignUpForm = () => {
       userName: data.userName,
       password: data.password,
       email: data.email,
-      confirmPassword: data.password,
+    //   confirmPassword: data.password,
     };
 
     if (data.otherName) {

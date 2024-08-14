@@ -11,8 +11,8 @@ const Navbar = () => {
           <div className="w-60 max-w-full px-4">
             <a href="/" className="block w-full py-5 text-3xl font-bold">
               <div className="flex flex-row pl-[40px]">
-              <h1 className="dark:hidden text-[#5D1AFF] text-[35px] font-bold">MyStudy</h1>
-              <h1 className="dark:hidden text-[#BF62CD] text-[30px]">Aid</h1>
+              <h1 className="dark:hidden text-[#1CC5F4] text-[35px] font-bold">MyStudy</h1>
+              <h1 className="dark:hidden text-[#2f455c] text-[30px]">Aid</h1>
               </div>
               <div>
                 <h1 className="hidden dark:block">MyStudy</h1>
@@ -43,11 +43,7 @@ const Navbar = () => {
                   } `}
               >
                 <ul className="block lg:flex">
-                  <ListItem NavLink="/#">Home</ListItem>
                   <ListItem NavLink="/FindATutor">Find A Tutor</ListItem>
-                  {/* <ListItem NavLink="/#">SignUp As Tutor</ListItem>
-                  <ListItem NavLink="/#">SignUp As User</ListItem>
-                  <ListItem NavLink="/#">Login</ListItem> */}
                 </ul>
               </nav>
             </div>
@@ -61,13 +57,13 @@ const Navbar = () => {
 
               <a
                 href="/Signup"
-                className="rounded-md bg-primary px-7 mr-[30px] py-3 text-base font-medium text-white hover:bg-primary/90"
+                className="rounded-md bg-[#1CC5F4] px-7 mr-[30px] py-3 text-base font-medium text-white hover:bg-primary/90"
               >
                 Sign Up As User
               </a>
               <a
                 href="/tutorsignup"
-                className="rounded-md bg-primary px-7 mr-[30px] py-3 text-base font-medium text-white hover:bg-primary/90"
+                className="rounded-md bg-[#21d0b2] px-7 mr-[30px] py-3 text-base font-medium text-white hover:bg-primary/90"
               >
                 Sign Up As Tutor
               </a>

@@ -39,7 +39,7 @@ const SignInForm = () => {
 
 				<button
 					type="submit"
-					className="h-16 px-7 py-3 font-semibold leading-none text-white bg-blue-600 w-full"
+					className="h-16 px-7 py-3 font-semibold leading-none text-white bg-[#2f455c] w-full"
 				>
 					SIGN IN
 				</button>
@@ -56,7 +56,7 @@ const SignIn15 = () => {
 	return (
 		<section
 			className="ezy__signin15 light flex items-center justify-center py-24 md:py-48 text-white"
-			style={{ backgroundImage: "linear-gradient(to right, #2575fc, #6a11cb)" }}
+			style={{ backgroundImage: "linear-gradient(to right, #1CC5F4, #21d0b2)" }}
 		>
 			<div className="container px-4 mx-auto">
 				<div className="flex justify-center text-center">

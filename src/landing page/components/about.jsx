@@ -25,8 +25,12 @@ export default function App() {
       <SwiperSlide>
         <div className="slider-container">
           <img src={slider1} className="slider-image" alt="Slide 1" />
-          <div className="overlay">
-            <h2 className="overlay-text">ABOUT US</h2>
+          <div className="overlay flex flex-col">
+            <h2 className="overlay-text l">ABOUT US</h2>
+            <p className='max-w-[50%] text-center text-white'>
+            MyStudyAid is your comprehensive platform for connecting students with expert tutors tailored to their learning needs.
+            Whether you're looking to excel in your studies or share your knowledge as an instructor,
+            MyStudyAid provides the tools and resources to succeed.</p>
           </div>
         </div>
       </SwiperSlide>

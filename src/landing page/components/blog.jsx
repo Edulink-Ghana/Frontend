@@ -100,7 +100,7 @@ const Blog7 = () => {
 							</p>
 							<a
 								href="#!"
-								className="bg-blue-600 hover:bg-opacity-90 text-white font-bold border border-blue-600 py-3 px-7 rounded transition"
+								className="bg-[#21d0b2] hover:bg-opacity-90 text-white font-bold border border-blue-600 py-3 px-7 rounded transition"
 							>
 								Load All Posts
 							</a>

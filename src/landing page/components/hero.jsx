@@ -14,8 +14,8 @@ const Hero = () => {
                     <p className="mb-5 text-base sm:text-lg lg:text-xl">
                         We have the best teachers handling various subjects available to aid you on this journey.
                     </p>
-                    <Link to="/#">
-                        <button className="btn btn-primary">Find A Tutor</button>
+                    <Link to="/FindATutor">
+                        <button className="btn bg-[#21d0b2]">Find A Tutor</button>
                     </Link>
                 </div>
             </div>

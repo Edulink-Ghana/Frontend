@@ -38,7 +38,7 @@ const TeamMemberItem = ({ member }) => (
     <img
       src={member.picture}
       alt={member.fullName}
-      className="max-w-full h-auto rounded-full border-4 p-1 border-[#BF62CD] mx-auto -mt-20"
+      className="max-w-full h-auto rounded-full border-4 p-1 border-[#21d0b2] mx-auto -mt-20"
       width="120"
     />
     <div className="mt-6">
@@ -46,7 +46,7 @@ const TeamMemberItem = ({ member }) => (
       <p className="mb-4 text-sm">{member.designation}</p>
       <p className="opacity-50">{member.bio}</p>
       <div className="mt-6">
-        <button className="bg-[#4A00FF] text-white py-2 px-4 rounded-full hover:bg-blue-700">
+        <button className="bg-[#21d0b2] text-white py-2 px-4 rounded-full hover:bg-[#2f455c]">
           Book Now
         </button>
       </div>
@@ -77,15 +77,11 @@ const TeamMember10 = () => {
             <h2 className="text-3xl leading-none font-bold md:text-[45px] mb-4">
               Meet Our Qualified and Experienced Tutors
             </h2>
-            <p>
-              Assumenda non repellendus distinctio nihil dicta sapiente,
-              quibusdam maiores, illum at qui.
-            </p>
           </div>
         </div>
 
        
-        <div className="grid grid-cols-4 gap-2 mb-[10vh] ml-[10px] border p-[8px] bg-[#5D1AFF] rounded-lg ">
+        <div className="grid grid-cols-4 gap-2 mb-[10vh] ml-[10px] border p-[8px] bg-[#1CC5F4] rounded-lg ">
           <select
             className="form-select border rounded-lg "
             value={rating}

@@ -3,20 +3,20 @@ import React from 'react'
 const Footer = () => {
   return (
     <div>
-      <section className='bg-[#bdd0f9] rounded-t-2xl'>
+      <section className='bg-[#2f455c] rounded-t-2xl'>
         <div className="flex flex-col mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
-          {/* TOP CONTAINER */}
+
           <div className="flex flex-col lg:flex-row lg:justify-between ">
-            {/* LEFT DIV */}
+         
             <div className="flex flex-col lg:mr-20">
               <div className='flex flex-row'>
-                <h1 className="dark:hidden text-[#5D1AFF] text-[65px] font-bold">MyStudy</h1>
-                <h1 className="dark:hidden text-[#BF62CD] text-[60px]">Aid</h1>
+                <h1 className="dark:hidden text-[#1CC5F4] text-[65px] font-bold">MyStudy</h1>
+                <h1 className="dark:hidden text-white text-[60px]">Aid</h1>
               </div>
-              <p className="font-inter my-4 max-w-[350px] text-base font-light text-gray-500">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit ut al
+              <p className="font-inter my-4 max-w-[350px] text-base font-light text-white">
+              We have the best teachers handling various subjects available to aid you on this journey.
               </p>
-              {/* NEWSLETTER & EMAIL */}
+          
               <div className="flex flex-col">
                 <form action="" className="mb-10 mt-5 max-w-[421px]">
                   <div className="relative">
@@ -58,95 +58,95 @@ const Footer = () => {
                   >
                     EMAIL US
                   </h3>
-                  <p className="font-inter text-base">mystudyaid@gmail.com</p>
+                  <p className="font-inter text-white">mystudyaid@gmail.com</p>
                 </div>
               </div>
             </div>
-            {/* RIGHT DIV */}
+
             <div className="mt-7 max-w-[700px] grow lg:flex lg:flex-row">
-              {/* FOOTER LINKS */}
+     
               <div className="flex grow flex-row flex-wrap lg:flex-nowrap lg:items-start">
-                {/* LINK BLOCK */}
+            
                 <div className="my-5 mr-8 flex max-w-[500px] grow basis-[100px] flex-col space-y-5 lg:mt-0">
                   <h2 className="font-inter font-medium text-black">SOLUTION</h2>
-                  <a href="" className="font-inter font-light text-gray-500">
-                    Marketing
+                  <a href="" className="font-inter font-light text-white">
+                    Home Tutoring
                   </a>
-                  <a href="" className="font-inter font-light text-gray-500">
-                    Analytics
+                  <a href="" className="font-inter font-light text-white">
+                    Online Tutoring
                   </a>
-                  <a href="" className="font-inter font-light text-gray-500">
-                    Commerce
+                  <a href="" className="font-inter font-light text-white">
+                    Help with Assignment 
                   </a>
-                  <a href="" className="font-inter font-light text-gray-500">
-                    Insights
+                  <a href="" className="font-inter font-light text-white">
+                    Financial Literacy Classes
                   </a>
                 </div>
-                {/* LINK BLOCK */}
+      
                 <div className="my-5 mr-8 flex max-w-[500px] grow basis-[100px] flex-col space-y-5 lg:mt-0">
                   <h2 className="font-inter font-medium text-black">SUPPORT</h2>
-                  <a href="" className="font-inter font-light text-gray-500">
+                  <a href="" className="font-inter font-light text-white">
                     Pricing
                   </a>
-                  <a href="" className="font-inter font-light text-gray-500">
+                  <a href="" className="font-inter font-light text-white">
                     Documentation
                   </a>
-                  <a href="" className="font-inter font-light text-gray-500">
+                  <a href="" className="font-inter font-light text-white">
                     Guides
                   </a>
-                  <a href="" className="font-inter font-light text-gray-500">
+                  <a href="" className="font-inter font-light text-white">
                     API Status
                   </a>
                 </div>
-                {/* LINK BLOCK */}
+       
                 <div className="my-5 mr-8 flex max-w-[500px] grow basis-[100px] flex-col space-y-5 lg:mt-0">
                   <h2 className="font-inter font-medium text-black">COMPANY</h2>
-                  <a href="" className="font-inter font-light text-gray-500">
+                  <a href="" className="font-inter font-light text-white">
                     About
                   </a>
-                  <a href="" className="font-inter font-light text-gray-500">
+                  <a href="" className="font-inter font-light text-white">
                     Blog
                   </a>
-                  <a href="" className="font-inter font-light text-gray-500">
+                  <a href="" className="font-inter font-light text-white">
                     Jobs
                   </a>
-                  <a href="" className="font-inter font-light text-gray-500">
+                  <a href="" className="font-inter font-light text-white">
                     Press
                   </a>
-                  <a href="" className="font-inter font-light text-gray-500">
+                  <a href="" className="font-inter font-light text-white">
                     Partners
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          {/* DIVIDER */}
+
           <div className="mx-auto my-12 w-full border border-black lg:my-20"></div>
-          {/* BOTTOM CONTAINER */}
+  
           <div className="lg:flex lg:flex-row-reverse lg:justify-between">
-            {/* SOCIAL MEDIA ICONS */}
+  
             <div className="mb-8 mt-6 flex flex-col md:flex-row lg:mt-0">
               <a
                 href=""
-                className="mr-4 mb-4 md:mb-0 text-black transition hover:text-gray-400"
+                className="mr-4 mb-4 md:mb-0 text-white transition hover:text-gray-400"
               >
                 Terms of Service
               </a>
               <a
                 href=""
-                className="md:mx-4 mb-4 md:mb-0 text-black transition hover:text-gray-400"
+                className="md:mx-4 mb-4 md:mb-0 text-white transition hover:text-gray-400"
               >
                 License
               </a>
               <a
                 href=""
-                className="md:mx-4 text-black transition hover:text-gray-400"
+                className="md:mx-4 text-white transition hover:text-gray-400"
               >
                 Privacy Policy
               </a>
             </div>
-            <p className="font-inter text-sm text-black lg:mt-0">
-              © Copyright 2021. All rights reserved.
+            <p className="font-inter text-sm text-white lg:mt-0">
+              © Copyright 2024. Designed by Charles Adu-Sarkodie & Emmanuel Lartey.
             </p>
           </div>
         </div>

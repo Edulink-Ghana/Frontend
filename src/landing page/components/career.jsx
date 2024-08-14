@@ -20,7 +20,7 @@ const ApplyNowButton = () => {
   const navigate = useNavigate();
 
   const handleApplyNow = () => {
-    navigate("/tutorSignUp"); 
+    navigate("/tutorSignUp");
   };
 
   return (
@@ -50,13 +50,11 @@ const Career = () => {
                     Become an Instructor
                   </h2>
                   <p className="text-lg opacity-75 my-6">
-                    An activity that requires a person's mental or physical
-                    effort is work. If a person is trained for a certain type of
-                    job, they may have a profession. Typically, a job would be a
-                    subset of someone's career.
+
+                    Become an instructor with MystudyAid and share your expertise while empowering students to reach their full potential.
                   </p>
                   <div className="grid grid-cols-12">
-                    <div className="col-span-12 md:col-span-10 lg:col-span-8 xl:col-span-6">
+                    <div className="col-span-12 md:col-span-10 lg:col-span-8 xl:col-span-6 ">
                       <ApplyNowButton />
                     </div>
                   </div>

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { tutorImg } from '../assets';
 
 const FindATutor = () => {
     const [categories, setCategories] = useState({
@@ -23,11 +24,14 @@ const FindATutor = () => {
         Ratings: { Premium: false, Regular: false, Newbie: false },
     });
 
-    const [range, setRange] = useState({ min: 0, max: 10 });
+    const [displayedProfiles, setDisplayedProfiles] = useState([]);
 
-    const sliderRef = useRef(null);
-    const [isDraggingMin, setIsDraggingMin] = useState(false);
-    const [isDraggingMax, setIsDraggingMax] = useState(false);
+    const sampleProfiles = [
+        { id: 1, name: "Nana Adu", category: "Mathematics", format: "Onsite", bio: "Experienced Mathematics tutor with a passion for helping students excel.", profilePhoto:"https://cdn.easyfrontend.com/pictures/users/user24.jpg", },
+        { id: 2, name: "Ama Asantewaa", category: "Mathematics", format: "Online", bio:"Specialized in Maths and literary analysis",profilePhoto:"https://cdn.easyfrontend.com/pictures/users/user9.jpg" },
+        { id: 3, name: "Kojo Owusu", category: "English", format: "Onsite", bio:"He is known for his hands-on approach to teaching, making complex english concepts accessible to his students.", profilePhoto:"https://cdn.easyfrontend.com/pictures/users/user23.jpg" },
+        { id: 4, name: "Yaa Dede", category: "Science", format: "Onsite", bio:"Yaa has been teaching Science and Social Studies for over 7 years", profilePhoto:"https://cdn.easyfrontend.com/pictures/users/user13.jpg"},
+    ];
 
     const toggleCategory = (category) => {
         setCategories((prev) => ({ ...prev, [category]: !prev[category] }));
@@ -44,50 +48,19 @@ const FindATutor = () => {
         toggleFilter(category, filter);
     };
 
-    const handleMouseDown = (type) => {
-        if (type === "min") setIsDraggingMin(true);
-        if (type === "max") setIsDraggingMax(true);
-    };
-
-    const handleMouseUp = () => {
-        setIsDraggingMin(false);
-        setIsDraggingMax(false);
-    };
-
-    const handleMouseMove = (e) => {
-        if (!sliderRef.current) return;
-        const slider = sliderRef.current;
-        const sliderRect = slider.getBoundingClientRect();
-        const sliderWidth = sliderRect.width;
-        const offsetX = e.clientX - sliderRect.left;
-
-        if (
-            isDraggingMin &&
-            offsetX >= 0 &&
-            offsetX <= (range.max * sliderWidth) / 10
-        ) {
-            const newMin = (offsetX / sliderWidth) * 10;
-            setRange((prev) => ({ ...prev, min: Math.min(newMin, prev.max) }));
-        }
-
-        if (
-            isDraggingMax &&
-            offsetX >= (range.min * sliderWidth) / 10 &&
-            offsetX <= sliderWidth
-        ) {
-            const newMax = (offsetX / sliderWidth) * 10;
-            setRange((prev) => ({ ...prev, max: Math.max(newMax, prev.min) }));
-        }
-    };
-
     useEffect(() => {
-        document.addEventListener("mousemove", handleMouseMove);
-        document.addEventListener("mouseup", handleMouseUp);
-        return () => {
-            document.removeEventListener("mousemove", handleMouseMove);
-            document.removeEventListener("mouseup", handleMouseUp);
-        };
-    }, [isDraggingMin, isDraggingMax]);
+        const filteredProfiles = sampleProfiles.filter((profile) => {
+            const matchesCategory = filters.Category.Mathematics
+                ? profile.category === "Mathematics"
+                : true;
+            const matchesFormat = filters.Format.Onsite
+                ? profile.format === "Onsite"
+                : true;
+            return matchesCategory && matchesFormat;
+        });
+
+        setDisplayedProfiles(filteredProfiles);
+    }, [filters]);
 
     const renderFilters = (category) => {
         return (
@@ -147,53 +120,28 @@ const FindATutor = () => {
                             {categories[category] && renderFilters(category)}
                         </div>
                     ))}
-
-                    {/* Price Range Section */}
-                    <div>
-                        <p className="md:text-lg font-semibold mb-2">Price Range</p>
-                        <div className="flex flex-col items-center">
-                            <div
-                                ref={sliderRef}
-                                className="relative w-full my-5 h-5"
-                                onMouseDown={() => { }}
-                            >
-                                <div
-                                    className="absolute inset-0 flex items-center justify-between"
-                                    onMouseDown={(e) => e.preventDefault()}
-                                >
-                                    <div
-                                        className="h-5 w-5 cursor-pointer border-2 border-black z-10 rounded-full bg-white"
-                                        style={{
-                                            left: `${(range.min / 10) * 100}%`,
-                                            position: "absolute",
-                                        }}
-                                        onMouseDown={() => handleMouseDown("min")}
-                                    ></div>
-                                    <div
-                                        className="h-5 w-5 cursor-pointer border-2 border-black z-10 rounded-full bg-white"
-                                        style={{
-                                            left: `${(range.max / 10) * 100}%`,
-                                            position: "absolute",
-                                        }}
-                                        onMouseDown={() => handleMouseDown("max")}
-                                    ></div>
-                                </div>
-                                <div className="absolute inset-0 h-1 bg-black top-1/2 -translate-y-1/2"></div>
-                            </div>
-                            <div className="flex w-full justify-between">
-                                <div>GHc200.00</div>
-                                <div>GHc2000.00</div>
-                            </div>
-                        </div>
-                    </div>
                 </aside>
 
                 {/* Main Content */}
                 <main className="flex-1 md:block p-10 bg-white border border-gray-400 rounded-md">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"> {/* Product List Containers */} <div className="h-72 border-2 border-dashed border-gray-400 rounded-lg p-4 flex items-center justify-center text-gray-400"> Product List </div>
-                        <div className="h-72 border-2 border-dashed border-gray-400 rounded-lg p-4 flex items-center justify-center text-gray-400"> Product List </div>
-                        <div className="h-72 border-2 border-dashed border-gray-400 rounded-lg p-4 flex items-center justify-center text-gray-400"> Product List </div>
-                        <div className="h-72 border-2 border-dashed border-gray-400 rounded-lg p-4 flex items-center justify-center text-gray-400"> Product List </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                        {displayedProfiles.map((profile) => (
+                            <div
+                                key={profile.id}
+                                className="h-72 border-2 border-dashed border-gray-400 rounded-lg p-4 flex flex-col gap-[6px] items-center justify-center text-black font-bold"
+                            >
+                                
+                                <img
+                                    src={profile.profilePhoto}
+                                    alt={profile.name}
+                                    className="w-[100px] h-[90.67px] rounded-full mx-auto mb-[10px]"
+                                />
+                                {profile.name}
+                                <p className="text-sm text-center">{profile.bio}</p>
+                                <p className="text-sm text-center">{profile.category}</p>
+                                <p className="text-sm text-center">{profile.format}</p>
+                            </div>
+                        ))}
                     </div>
                 </main>
             </div>

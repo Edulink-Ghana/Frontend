@@ -9,6 +9,7 @@ import offerImg from "./images/offer.jpg"
 import offer1 from "./images/students.jpg"
 import offer2 from "./images/teachers.png"
 import offer3 from "./images/school.jpg"
+import tutorImg from "./images/img8.jpg"
 
 
 export{
@@ -48,4 +49,7 @@ export{
 }
 export{
     offer3
+}
+export{
+    tutorImg
 }

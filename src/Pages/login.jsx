@@ -55,7 +55,7 @@ const SignInForm = () => {
 const SignIn15 = () => {
 	return (
 		<section
-			className="ezy__signin15 light flex items-center justify-center py-24 md:py-48 text-white"
+			className="ezy__signin15 light flex items-center justify-center py-24 md:py-48 text-black "
 			style={{ backgroundImage: "linear-gradient(to right, #1CC5F4, #21d0b2)" }}
 		>
 			<div className="container px-4 mx-auto">

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 const teamMembers = [
   {
@@ -66,39 +67,43 @@ TeamMemberItem.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-const TeamMemberDetails = ({ member, onClose }) => (
-  <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
-    <div className="bg-white dark:bg-slate-800 shadow-xl rounded-xl p-6 lg:p-8 w-1/2">
-      <img
-        src={member.picture}
-        alt={member.fullName}
-        className="max-w-full h-auto rounded-full border-4 p-1 border-[#21d0b2] mx-auto"
-        width="150"
-      />
-      <div className="mt-6">
-        <h4 className="text-2xl font-medium mb-1 text-center">{member.fullName}</h4>
-        <p className="mb-4 text-sm text-center">{member.designation}</p>
-        <p className="mb-4 text-center">{member.bio}</p>
-        <p className="mb-4 text-center">{member.experience}</p>
-      <p className="mb-4 text-center">{member.location}</p>
-        <div className="mt-6 flex justify-center gap-2">
-          <button
-            className="bg-[#21d0b2] text-white py-2 px-4 rounded-full hover:bg-[#2f455c]"
-            onClick={onClose}
-          >
-            Close
-          </button>
-          <button
-            className="bg-[#1CC5F4] text-white py-2 px-4 rounded-full hover:bg-[#2f455c]"
-            onClick={() => alert('Booking initiated!')}
-          >
-            Book Now
-          </button>
+const TeamMemberDetails = ({ member, onClose }) => {
+  const navigate = useNavigate();
+
+   return (
+    <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+      <div className="bg-white dark:bg-slate-800 shadow-xl rounded-xl p-6 lg:p-8 w-1/2">
+        <img
+          src={member.picture}
+          alt={member.fullName}
+          className="max-w-full h-auto rounded-full border-4 p-1 border-[#21d0b2] mx-auto"
+          width="150"
+        />
+        <div className="mt-6">
+          <h4 className="text-2xl font-medium mb-1 text-center">{member.fullName}</h4>
+          <p className="mb-4 text-sm text-center">{member.designation}</p>
+          <p className="mb-4 text-center">{member.bio}</p>
+          <p className="mb-4 text-center">{member.experience}</p>
+          <p className="mb-4 text-center">{member.location}</p>
+          <div className="mt-6 flex justify-center gap-2">
+            <button
+              className="bg-[#21d0b2] text-white py-2 px-4 rounded-full hover:bg-[#2f455c]"
+              onClick={onClose}
+            >
+              Close
+            </button>
+            <button
+              className="bg-[#1CC5F4] text-white py-2 px-4 rounded-full hover:bg-[#2f455c]"
+              onClick={() => navigate('/booking')}
+            >
+              Book Now
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 TeamMemberDetails.propTypes = {
   member: PropTypes.object.isRequired,

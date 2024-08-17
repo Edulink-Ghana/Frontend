@@ -44,7 +44,7 @@ const Navbar = () => {
                   } `}
               >
                 <ul className="block lg:flex">
-                  <ListItem NavLink="/FindATutor">Find A Tutor</ListItem>
+                  <Link to="/FindATutor">Find A Tutor</Link>
                 </ul>
               </nav>
             </div>

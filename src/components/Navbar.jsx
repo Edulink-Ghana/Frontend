@@ -56,18 +56,18 @@ const Navbar = () => {
                 Sign in
                 </Link>
 
-              <a
-                href="/Signup"
+              <Link
+                to="/Signup"
                 className="rounded-md bg-[#1CC5F4] px-7 mr-[30px] py-3 text-base font-medium text-white hover:bg-primary/90"
               >
                 Sign Up As User
-              </a>
-              <a
-                href="/tutorsignup"
+              </Link>
+              <Link
+                to="/tutorsignup"
                 className="rounded-md bg-[#21d0b2] px-7 mr-[30px] py-3 text-base font-medium text-white hover:bg-primary/90"
               >
                 Sign Up As Tutor
-              </a>
+              </Link>
             </div>
           </div>
         </div>

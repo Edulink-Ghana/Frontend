@@ -1,5 +1,6 @@
 import React from "react";
 import { tutor } from "../../assets";
+import { Link } from "react-router-dom";
 
 
 const Feature26 = () => {
@@ -18,12 +19,12 @@ const Feature26 = () => {
               learning meet to help you achieve your academic goals."
             </p>
             <div className="mt-4 md:mt-12">
-              <a
-                href="/FindATutor"
+              <Link
+                to="/FindATutor"
                 className="bg-[#1CC5F4] hover:bg-opacity-90 text-white border border-blue-600 rounded transition py-4 px-8 font-normal mb-6 sm:mb-0"
               >
                 Find a Tutor
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-span-12 lg:col-span-6 lg:col-start-8 ">

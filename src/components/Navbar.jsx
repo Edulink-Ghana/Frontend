@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SignUp3 from "../Pages/userSignUp";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -48,25 +49,25 @@ const Navbar = () => {
               </nav>
             </div>
             <div className="hidden justify-end pr-16 sm:flex lg:pr-0">
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="px-7 py-3 text-base font-medium text-dark hover:text-primary dark:text-white"
               >
                 Sign in
-              </a>
+                </Link>
 
-              <a
-                href="/Signup"
+              <Link
+                to="/Signup"
                 className="rounded-md bg-[#1CC5F4] px-7 mr-[30px] py-3 text-base font-medium text-white hover:bg-primary/90"
               >
                 Sign Up As User
-              </a>
-              <a
-                href="/tutorsignup"
+              </Link>
+              <Link
+                to="/tutorsignup"
                 className="rounded-md bg-[#21d0b2] px-7 mr-[30px] py-3 text-base font-medium text-white hover:bg-primary/90"
               >
                 Sign Up As Tutor
-              </a>
+              </Link>
             </div>
           </div>
         </div>
